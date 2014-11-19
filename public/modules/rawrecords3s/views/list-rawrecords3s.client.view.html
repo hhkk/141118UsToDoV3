@@ -1,0 +1,19 @@
+<section data-ng-controller="Rawrecords3sController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Rawrecords3s</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="rawrecords3 in rawrecords3s" data-ng-href="#!/rawrecords3s/{{rawrecords3._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="rawrecords3.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="rawrecords3.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="rawrecords3.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!rawrecords3s.$resolved || rawrecords3s.length">
+    	No Rawrecords3s yet, why don't you <a href="/#!/rawrecords3s/create">create one</a>?
+    </div>
+</section>
