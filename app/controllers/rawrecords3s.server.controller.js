@@ -74,6 +74,7 @@ exports.delete = function(req, res) {
  */
 exports.list = function(req, res) { 
 	Rawrecords3.find().sort('-created').populate('user', 'displayName').exec(function(err, rawrecords3s) {
+        console.log ("in here hk");
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)

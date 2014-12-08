@@ -4,9 +4,10 @@
 angular.module('users').config(['$stateProvider',
 	function($stateProvider) {
 		// Users state routing
+
 		$stateProvider.
 		state('profile', {
-			url: '/settings/profile',
+			url: '/settings/profile',  // http://localhost:3000/#!/settings/profile
 			templateUrl: 'modules/users/views/settings/edit-profile.client.view.html'
 		}).
 		state('password', {
