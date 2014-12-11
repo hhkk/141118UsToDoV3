@@ -1,0 +1,19 @@
+<section data-ng-controller="UstodosController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Ustodos</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="ustodo in ustodos" data-ng-href="#!/ustodos/{{ustodo._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="ustodo.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="ustodo.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="ustodo.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!ustodos.$resolved || ustodos.length">
+    	No Ustodos yet, why don't you <a href="/#!/ustodos/create">create one</a>?
+    </div>
+</section>
